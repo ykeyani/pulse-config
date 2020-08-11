@@ -1,0 +1,6 @@
+---
+
+- name: restart pulse
+  shell: |
+    pulseaudio -k
+    pulseaudio --start

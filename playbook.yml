@@ -1,0 +1,7 @@
+---
+
+- name: Configure pulse and alsa
+  hosts: localhost, all
+  roles:
+    - pulse
+    - alsa

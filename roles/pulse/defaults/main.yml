@@ -1,0 +1,15 @@
+pulse_daemon_conf_path: ~/.config/pulse/daemon.conf
+
+# the bit depth of the audio
+# u8, s16le, s16be, s24le, s24be, s24-32le, s24-32be, s32le, s32be float32le, float32be, ulaw, alaw
+sample_format: float32le
+sample_rate: 96000
+alternate_rate: 48000  # lower than sample rate
+
+buffer_size: 65536
+fragment_size: 32768
+
+bit_rate: "{{(sample_rate * 32) | int}}"
+fragments: "{{(buffer_size / fragment_size) | int}}"
+buffer_msec: "{{((buffer_size/(bit_rate | int))*1000) | int}}"
+fragment_msec: "{{((buffer_msec | int)/(fragments | int)) | int}}"

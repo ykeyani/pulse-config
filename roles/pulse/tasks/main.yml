@@ -1,0 +1,9 @@
+---
+
+- name: pulse daemon configuration
+  template:
+    src: daemon.conf.j2
+    dest: "{{pulse_daemon_conf_path}}"
+    mode: u=rw,g=r,o=r
+  notify:
+    - restart pulse
