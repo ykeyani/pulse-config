@@ -54,10 +54,13 @@ resample-method = speex-float-10
 avoid-resampling = false
 enable-remixing = yes
 ; remixing-use-all-sink-channels = yes
-enable-lfe-remixing = yes
+remixing-produce-lfe = yes
+remixing-consume-lfe = yes
 ; lfe-crossover-freq = 0
 
 flat-volumes = no
+
+; rescue-streams = yes
 
 ; rlimit-fsize = -1
 ; rlimit-data = -1
@@ -85,5 +88,5 @@ alternate-sample-rate = {{alternate_rate}}
 ; default-fragment-size-msec = {{fragment_msec}}
 
 ; enable-deferred-volume = yes
-deferred-volume-safety-margin-usec = 1
+deferred-volume-safety-margin-usec = 8000
 ; deferred-volume-extra-delay-usec = 0
